@@ -25,6 +25,21 @@ Same model, same data, CPU (this machine) vs GPU (cloud free tier if available).
 ### 7. Label Leakage (continued)
 Strip comments from vulnerability dataset, retrain, measure accuracy drop. Then try CVE fix commits as clean data source. Follow-up to current paper.
 
+### 8. Facial Recognition on Constrained Hardware
+Train and evaluate face detection + recognition pipelines on CPU-only ARM. Compare approaches: Haar cascades vs HOG+SVM vs lightweight CNNs (MobileFaceNet, ArcFace-lite). Measure accuracy, speed (FPS), and minimum hardware requirements. Test with public datasets (LFW, WIDER FACE).
+
+### 9. Person Re-identification Across Camera Views
+Given images of a person from one camera, can a small model identify them in a different camera's feed? Train re-ID models on Market-1501 or DukeMTMC datasets. Measure rank-1 accuracy and mAP on CPU. Explore feature extraction vs end-to-end approaches.
+
+### 10. Vehicle Detection and Classification
+Train models to detect and classify vehicles (car, truck, motorcycle, bus) from security camera frames. Compare YOLO-tiny vs SSD-MobileNet vs custom lightweight architectures on CPU. Measure FPS achievable on ARM for real-time processing. Use public datasets (PASCAL VOC, COCO vehicle subset).
+
+### 11. Smart Security: Anomaly Detection in Video
+Can a model learn "normal" activity patterns and flag anomalies without labeled data? Unsupervised/self-supervised approaches on surveillance footage. Autoencoders, prediction-based methods. Test on UCF Crime dataset or similar. Focus on what runs in real-time on edge hardware.
+
+### 12. License Plate Detection and OCR Pipeline
+End-to-end pipeline: detect plate region → segment characters → recognize text. Compare traditional CV (contour detection + template matching) vs lightweight neural approaches. Test on public plate datasets across different formats (US, EU, custom).
+
 ## Completed
 
 - [x] Label leakage in vulnerability datasets (paper v1, Sept 2026)
