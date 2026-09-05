@@ -40,6 +40,24 @@ Can a model learn "normal" activity patterns and flag anomalies without labeled 
 ### 12. License Plate Detection and OCR Pipeline
 End-to-end pipeline: detect plate region → segment characters → recognize text. Compare traditional CV (contour detection + template matching) vs lightweight neural approaches. Test on public plate datasets across different formats (US, EU, custom).
 
+### 13. Neural Architecture Comparison on Identical Tasks
+Take one classification task and run it through every major architecture: MLP, CNN, RNN/LSTM, GRU, Transformer, Mamba (state space), KAN (Kolmogorov-Arnold), Graph Neural Network, Capsule Network, Hopfield Network (modern), Mixture of Experts. Same data, same compute budget, same metrics. Which architectures suit which data shapes? Where do newer architectures actually beat older ones vs just hype?
+
+### 14. Novel Architecture: Thermodynamic Neural Networks
+Inspired by Extropic's TSU direction. Can we build a neural network where neurons follow thermodynamic principles — energy minimization, entropy gradients, Boltzmann distributions? Implement from scratch in PyTorch, test on standard benchmarks, compare against conventional architectures. If it works, package as a library.
+
+### 15. Novel Architecture: Topological Neural Networks
+Use persistent homology and topological features as network layers. Input data gets mapped to topological descriptors (Betti numbers, persistence diagrams), which feed into learnable layers. Could capture structural patterns that spatial convolutions miss. Implement, test, publish as library if viable.
+
+### 16. Novel Architecture: Causal Attention Networks
+Standard attention is correlational. Build an attention mechanism that estimates causal relationships between sequence elements using do-calculus inspired operations. Test on tasks where causation matters (time series, event sequences). Compare against standard transformers.
+
+### 17. Spiking Neural Networks on CPU
+Neuromorphic computing without neuromorphic hardware. Implement leaky integrate-and-fire neurons, train with surrogate gradient methods. Benchmark energy efficiency (FLOPs per inference) against conventional networks. Test on event-based datasets and standard image classification.
+
+### 18. Architecture Effectiveness Library (ArchBench)
+Package all tested architectures (#13-17) into a single library where users can swap architectures on the same task with one line. `archbench.train(data, arch='mamba')` vs `archbench.train(data, arch='transformer')`. Automatic benchmarking and comparison reports.
+
 ## Completed
 
 - [x] Label leakage in vulnerability datasets (paper v1, Sept 2026)
